@@ -193,9 +193,25 @@ console.log(buyMeals(20));
 
 // 17. [Challenge] Write a function missingLeg(side1, side2) that takes in the length of a hypotenuse and a leg of a right triangle and prints out the missing leg's length
 /// The larger side should be the hypotenuse  
+function missingLeg(side1, side2) {
+  let hypotenuse = Math.max(side1, side2);
+  let leg = Math.min(side1, side2);
+  let missing = Math.sqrt(hypotenuse ** 2 - leg ** 2);
 
-
+  return missing;
+}
+console.log(missingLeg(6,5));
 
 // 18. [Super Challenge] In math, Factorial is the product of an integer and all the integers below it.
 /// For example: factorial(3) = 3*2*1 = 6 ---  factorial(5) = 5*4*3*2*1 = 120
 /// Write a function factorial(x) that finds the factorial of any integer.
+function factorial(x) {
+  let result = 1;
+
+  for (let i = x; i >= 1; i--) {
+    result *= i;
+  }
+
+  return result;
+}
+console.log(factorial(5));
